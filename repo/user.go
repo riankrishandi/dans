@@ -17,7 +17,7 @@ func (r *Repo) GetUser(param GetUserRepoParam) (*GetUserRepoRes, error) {
 		id,
 		username,
 		password
-	FROM tbl_user WHERE username=? LIMIT1`, param.Username)
+	FROM tbl_user WHERE username=? LIMIT 1`, param.Username)
 	switch err {
 	case nil:
 		return &GetUserRepoRes{user}, nil
